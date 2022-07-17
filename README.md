@@ -143,7 +143,10 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [X] 25 Minute Long Work Timer
 - [X] 5 / 15 Minute Long Break Timer
 - [X] Alerts When the Timer Ends
-    - [X] Pop up box during breaks
+    - [X] Pop up Box During Breaks
+    - [X] Option to Work/Break for Five More Minutes After Timer Ends
+- [X] Minimal Timer Bar at the Bottom of the Screen
+- [X] Pomodoro Loop Logic
 
 See the [open issues](https://github.com/SaahilParikh/Strawberry/issues) for a full list of proposed features (and known issues).
 
