@@ -112,9 +112,10 @@ Install hammerspoon
 
 1. Download Strawberry and it's dependencies
    ```sh
-   curl -L https://github.com/SaahilParikh/Strawberry/raw/main/Raw/CountDown.spoon.zip > ~/.hammerspoon/Spoons/CountDown.spoon.zip
-   curl -L https://github.com/SaahilParikh/Strawberry/raw/main/Raw/Strawberry.spoon.zip > ~/.hammerspoon/Spoons/Strawberry.spoon.zip
-   unzip Strawberry.spoon.zip CountDown.spoon.zip
+   curl -L https://github.com/Hammerspoon/Spoons/raw/master/Spoons/CountDown.spoon.zip > /tmp/CountDown.spoon.zip
+   curl -L https://github.com/SaahilParikh/Strawberry/raw/main/Spoon/Strawberry.spoon.zip > /tmp/Strawberry.spoon.zip
+   unzip /tmp/CountDown.spoon.zip -d ~/Raw/Spoons/
+   unzip /tmp/Strawberry.spoon.zip -d ~/Raw/Spoons/
    ```
 2. Add use strawberry spoon in your ```init.lua```
    ```sh
