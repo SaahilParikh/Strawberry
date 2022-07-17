@@ -73,6 +73,7 @@ function obj:bindHotkeys(mapping)
 end
 
 function obj:init()
+  import = hs.spoons.use("CountDown")
   self.menu = hs.menubar.new(self.alwaysShow)
   self.numShortBreak = 0
   self:reset()
@@ -88,6 +89,8 @@ function obj:reset()
   self.menu:setMenu(items)
   self.menu:setTitle(LOGO)
   self.timerRunning = false
+  spoon.CountDown:setProgress(1.0)
+
   hs.alert.closeSpecific(self.breakAlertUUID, 2)
   if not self.alwaysShow then
       self.menu:removeFromMenuBar()
@@ -140,7 +143,6 @@ end
 
 function obj:tick()
   self.timeLeft = self.timeLeft - 1
-  print("tick")
   self:updateTimerString()
   if self.timeLeft <= 0 then
     self:reset()
@@ -186,6 +188,9 @@ function obj:start(duration)
       self.timeLeft = duration * 60
       self:updateTimerString()
     end
+    spoon.CountDown:startFor(self.timeLeft / 60)
+  else
+    spoon.CountDown:pauseOrResume()
   end
   if not self.isWorkTask then
     self.breakAlertUUID = hs.alert.show("It's break time :)", { textSize = self.alertTextSize }, self.timeLeft * 60)
@@ -206,6 +211,7 @@ end
 
 function obj:pause()
   self.timerRunning = false
+  spoon.CountDown:pauseOrResume()
   hs.alert.closeSpecific(self.breakAlertUUID, 1)
   local items = {
     { title = "Stop", fn = function() self:reset() end },
