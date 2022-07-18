@@ -111,7 +111,7 @@ Install hammerspoon
 ### Installation
 0. Make a spoons directory for hammerspoon
    ```sh
-   mkdir ~/.hammerspoon/Spoon
+   mkdir ~/.hammerspoon/Spoons
    ```
 1. Download Strawberry and it's dependencies
    ```sh
