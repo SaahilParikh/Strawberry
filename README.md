@@ -116,7 +116,7 @@ Install hammerspoon
    ```
 1. Download Strawberry and it's dependencies
    ```sh
-   # Create and touch directories if needed
+   # Create directories and touch files as needed
    curl -L https://github.com/Hammerspoon/Spoons/raw/master/Spoons/CountDown.spoon.zip > /tmp/CountDown.spoon.zip
    curl -L https://github.com/SaahilParikh/Strawberry/raw/main/Spoon/Strawberry.spoon.zip > /tmp/Strawberry.spoon.zip
    unzip /tmp/CountDown.spoon.zip -d ~/.hammerspoon/Spoons/
