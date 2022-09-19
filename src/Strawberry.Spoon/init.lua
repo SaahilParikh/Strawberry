@@ -18,7 +18,7 @@ obj.homepage = "https://github.com/SaahilParikh/Strawberry"
 
 -- Settings
 
--- timer duration in minutes
+-- timer default duration in minutes
 obj.workDuration = 25
 obj.shortBreakDuration = 5
 obj.longBreakDuration = 15
@@ -70,6 +70,18 @@ function obj:bindHotkeys(mapping)
   else
     hs.hotkey.bind(self.defaultMapping["start"][1], self.defaultMapping["start"][2], function() self:start() end)
   end
+end
+
+function obj:setWorkDuration(duration)
+  self.workDuration = duration
+end
+
+function obj:setShortBreakDuration(duration)
+  self.shortBreakDuration = duration
+end
+
+function obj:setLongBreakDuration(duration)
+  self.longBreakDuration = duration
 end
 
 function obj:init()
