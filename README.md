@@ -105,6 +105,7 @@ Strawberry is a small light weight pomodoro timer written in Lua for Hammerspoon
 Install hammerspoon
 * hammerspoon
   ```sh
+  # Initialize Hammerspoon
   brew install --cask hammerspoon
   ```
 
@@ -115,6 +116,7 @@ Install hammerspoon
    ```
 1. Download Strawberry and it's dependencies
    ```sh
+   # Create directories and touch files as needed
    curl -L https://github.com/Hammerspoon/Spoons/raw/master/Spoons/CountDown.spoon.zip > /tmp/CountDown.spoon.zip
    curl -L https://github.com/SaahilParikh/Strawberry/raw/main/Spoon/Strawberry.spoon.zip > /tmp/Strawberry.spoon.zip
    unzip /tmp/CountDown.spoon.zip -d ~/.hammerspoon/Spoons/
