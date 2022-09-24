@@ -1,2 +1,3 @@
-zip Spoon/Strawberry.spoon.zip src/Strawberry.Spoon/*
+cd src/
+zip ../Spoon/Strawberry.spoon.zip Strawberry.Spoon/*
 
