@@ -160,7 +160,11 @@ See the [open issues](https://github.com/SaahilParikh/Strawberry/issues) for a f
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
+![small](/doc/smoll.png)
+![menu](/doc/menu.png)
+![pmt](/doc/pmt.png)
+![break time](/doc/bt.png)
+![start work](/doc/sw.png)
 
 <!-- CONTRIBUTING -->
 ## Contributing
