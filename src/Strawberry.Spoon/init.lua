@@ -187,8 +187,6 @@ function obj:takeNextBreak()
   end
 end
 
-
-
 --- Strawberry:start()
 --- Method
 --- Starts the timer and displays the countdown in a menubar item
@@ -228,6 +226,7 @@ end
 
 function obj:early()
   self.timeLeft = 0
+  self:tick()
 end
 
 
