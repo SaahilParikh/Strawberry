@@ -51,6 +51,10 @@ START_WORK = "Start Work"
 
 LOGO = "🍓"
 
+WORK = "Work"
+BREAK = "Break"
+DEFAULT_MEETING_MODE_TIME = tostring(60)
+
 obj.isWorkTask = true
 
 --- Strawberry:bindHotkeys(mapping)
@@ -95,7 +99,8 @@ function obj:reset()
   local items = {
     { title = "Start", fn = function() self:workTimer(self.workDuration) end },
     { title = "Short Break (5 min)", fn = function() self:breakTimer(self.shortBreakDuration) end },
-    { title = "Long Break (15 min)", fn = function() self:breakTimer(self.longBreakDuration) end }
+    { title = "Long Break (15 min)", fn = function() self:breakTimer(self.longBreakDuration) end },
+    { title = "Meeting Mode", fn = function() self:MeetingMode() end }
   }
   self.timeLeft = 0
   self.menu:setMenu(items)
@@ -182,6 +187,8 @@ function obj:takeNextBreak()
   end
 end
 
+
+
 --- Strawberry:start()
 --- Method
 --- Starts the timer and displays the countdown in a menubar item
@@ -212,7 +219,9 @@ function obj:start(duration)
   local items = {
     { title = "Stop",  fn = function() self:reset() end },
     { title = "Pause", fn = function() self:pause() end },
-    { title = "End Early", fn = function() self:early() end }
+    { title = "End Early", fn = function() self:early() end },
+    { title = "Meeting Mode", fn = function() self:MeetingMode() end }
+
   }
   self.menu:setMenu(items)
 end
@@ -220,6 +229,7 @@ end
 function obj:early()
   self.timeLeft = 0
 end
+
 
 function obj:pause()
   self.timerRunning = false
@@ -233,4 +243,22 @@ function obj:pause()
   self.menu:setMenu(items)
 end
 
+function obj:MeetingMode()
+  print("[Strawberry][INFO] Enter MeetingMode()")
+  self:reset()
+  button, text = hs.dialog.textPrompt("Time for a meeting!", "How long should we run the arbitrary timer for? (input a number)", DEFAULT_MEETING_MODE_TIME, WORK, BREAK)
+  self.isWorkTask = button == WORK and true or false
+  
+  new_timer_len = tonumber(text)
+
+  if not new_timer_len then
+    print(string.format("[Strawberry][ERROR] Could not parse %s to number. Button %s was clicked.", text, button))
+    self:start(self.workDuration)
+  else
+    self:start(new_timer_len)
+  end
+end
+
 return obj
+
+
