@@ -11,7 +11,7 @@ obj.__index = obj
 
 -- Metadata
 obj.name = "Strawberry"
-obj.version = "0.2"
+obj.version = "0.4"
 obj.author = "Saahil Parikh <saahil@doesnotexist.com>, Daniel Marques <danielbmarques@gmail.com> and Omar El-Domeiri <omar@doesnotexist.com>"
 obj.license = "MIT"
 obj.homepage = "https://github.com/SaahilParikh/Strawberry"
@@ -96,11 +96,13 @@ function obj:init()
 end
 
 function obj:reset()
+
   local items = {
     { title = "Start", fn = function() self:workTimer(self.workDuration) end },
     { title = "Short Break (5 min)", fn = function() self:breakTimer(self.shortBreakDuration) end },
     { title = "Long Break (15 min)", fn = function() self:breakTimer(self.longBreakDuration) end },
-    { title = "Meeting Mode", fn = function() self:MeetingMode() end }
+    { title = "Meeting Mode", fn = function() self:MeetingMode() end },
+    { title = string.format("Strawberry v%s", self.version), fn = function() hs.dialog.blockAlert("Made with ❤️", "for Rachel Woody", "🧶💎🎁") end }
   }
   self.timeLeft = 0
   self.menu:setMenu(items)
