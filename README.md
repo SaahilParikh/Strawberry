@@ -192,7 +192,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@saahil-parikh-292698167](https://twitter.com/saahil-parikh-292698167) - SaahilParikh@doesnotexist.com
+Saahil Parikh - SaahilParikh[at)berkeley(dot]edu
 
 Project Link: [https://github.com/SaahilParikh/Strawberry](https://github.com/SaahilParikh/Strawberry)
 
